@@ -1,0 +1,16 @@
+#product_wrap{
+    text-align: center;
+}
+
+.cat_title{
+    line-height: 100px;
+}
+
+.product{
+    width: 250px;
+    display: inline-block;
+}
+
+.product_name{
+    font-size:30px;
+}

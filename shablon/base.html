@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static css %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>Title</title>
+</head>
+<body>
+
+    <header>
+        <div id="status_bar">
+            <div class="stb_block"></div>
+            <div class="stb_block"></div>
+            <div id="logIn" class="stb_block">
+                {% if false %}
+
+                {% else %}
+                    <a id="logIn_link" href="">Log In</a>
+                    <div id="logIn_hideBlock">
+                        <label for="login_input">Логин</label> <input class="auth_input" id="login_input" type="text" >
+                        <a id="auth_exit" href="">Выйти</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock content %}
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>

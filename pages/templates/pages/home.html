@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <h3 class="title">Home</h3>
+
+    <div id="product_wrap">
+
+    <h3 class="cat_title">Товары</h3>
+    {% for item in products %}
+        <div class="product">
+            <img src="{{ item.img.url }}" alt="{{ item.name }}">
+            <p class="product_name">{{ item.name }}</p>
+            <p class="product_price">{{ item.price }}</p>
+        </div>
+    {% endfor %}
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock content %}

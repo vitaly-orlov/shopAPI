@@ -1,5 +1,6 @@
 from django.views.generic import ListView
 from product.models import Product
+from product.serializers import CategorySerializer, BrandsSerializer, ProductSerializer, AttrSerializer, OptionsSerializer
 
 class Home(ListView):
     template_name = 'pages/home.html'

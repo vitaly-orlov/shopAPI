@@ -15,14 +15,21 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from pages.views import Home
+from rest_framework import routers
 
+from pages.views import Home
 
 from django.conf.urls.static import static
 from django.conf import settings
 
+from product.views import ProductViewSet
+
+router = routers.SimpleRouter()
+router.register(r'api/products', ProductViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', Home.as_view(), name='home')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  url(r'^admin/', admin.site.urls),
+                  url(r'^$', Home.as_view(), name='home')
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += router.urls
